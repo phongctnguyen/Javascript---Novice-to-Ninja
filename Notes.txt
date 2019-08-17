@@ -1,0 +1,390 @@
+Chapter 2 - Variables, Constants & Comments
+* Javascript Data Types
+- Number: 1, 2, 3, 10, 3.14 
+- String: 'Hello, World' 
+- Boolean: true / false 
+- Null: Explicity set a variable with no value 
+- Undefined: For variables that have not yet been defined 
+- Object: Complex data structure - Arrays, Dates, Literals etc 
+- Symbol: Used with objects
+
+* Strings
+- Properties: length
+- Function: toUpperCase(), toLowerCase(), indexOf()
+            lastIndexOf(), slice(), splice(), substr(), replace()
+
+* Numbers
+- Operator: + - * /
+- Order of operation - B I D M A S
+- ++, --, +=, -=, *=, /=
+- NaN - Not a Number
+
+* Template Strings:
+Use `${}`
+
+* Arrays
+- Properties: length
+- Methods: join(), indexOf(), concat(), push(), pop(), shift(), unshift()
+
+* Booleans & Comparisons
+- Booleans: true, false
+- Comparisons: ==, !=, >, <, >=, <=
+
+* Loose and Strict Comparison
+=== !==
+
+* Type Conversion
+- Number()
+- String()
+- falsy: (false) (null) (undefined) (0) (NaN) ('') ("")
+- truthy: All except falsy value
+
+===============================================================================
+
+Chapter 3 - Control Flow
+* For Loops
+for (let index = 0; index < array.length; index++) {
+    const element = array[index];
+    
+}
+
+* While Loops
+while (condition) {
+    
+}
+
+* Do - While Loops
+do {
+    
+} while (condition);
+
+* If - Else If - Else statements
+if (condition) {
+    
+} else if(condition) {
+    
+} else {
+    
+}
+
+* logical operators 
+- OR ||  
+- AND &&
+- NOT !
+
+* Break and Continue
+- The break statement "jumps out" of a loop.
+- The continue statement "jumps over" one iteration in the loop.
+
+* Switch statements
+switch (key) {
+    case value:
+        
+        break;
+
+    default:
+        break;
+}
+
+* Variables & Block Scope
+- In JavaScript there are two types of scope:
+
++ Local scope
++ Global scope
+
+- JavaScript has function scope: Each function creates a new scope.
+
+- Scope determines the accessibility (visibility) of these variables.
+
+- Variables defined inside a function are not accessible (visible) from outside the function.
+
+===============================================================================
+
+
+Chapter 4: Functions & Methods
+
+* Function Declarations & Expression
+- Function Declarations: 
+
+function name([param[, param,[..., param]]]) {
+   [statements]
+}
+
++ name: The function name.
++ param: The name of an argument to be passed to the function. Maximum number of arguments varies in different engines.
++ statements: The statements which comprise the body of the function.
+
+- Function Expression:
+
+let(const) myFunction = function [name]([param1[, param2[, ..., paramN]]]) {
+   statements
+};
+
++ name: The function name. Can be omitted, in which case the function is anonymous. The name is only local to the function body.
++paramN: The name of an argument to be passed to the function.
++ statements: The statements which comprise the body of the function.
+
+* Arguments & Parameters
+
+const variable = function(param1, param2, ..., paranmN) {
+    statements;
+}
+const variable = function(param1, param2, ..., paranmN) {
+    return ....;
+}
+
+* Arrow function
+
+const variable = (param1, param2, ..., paranmN) => {
+    statements;
+}
+
+* Functions & Methods
+
+- Methods: 
++ JavaScript methods are actions that can be performed on objects.
++ A JavaScript method is a property containing a function definition.
++ Accessing Object Methods: objectName.methodName()
+
+- Functions:
++ A JavaScript function is a block of code designed to perform a particular task.
++ A JavaScript function is executed when "something" invokes it (calls it).
++ Function Invocation: The code inside the function will execute when "something" invokes (calls) the function:
+    # When an event occurs (when a user clicks a button)
+    # When it is invoked (called) from JavaScript code
+    # Automatically (self invoked)
+
+* Callback Function & forEach
+- Callback Function: A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
+
+- forEach: The forEach() method executes a provided function once for each array element.
+
+arr.forEach(callback(currentValue [, index [, array]])[, thisArg]);
+
++ callback: Function to execute on each element, taking three arguments:
++ currentValue: The current element being processed in the array.
++ index (Optional): The index of the current element being processed in the array.
++ array (Optional): The array forEach() was called upon.
++ thisArg (Optional): Value to use as this when executing callback.
+
+===============================================================================
+Chapter 5: Objects
+* Object Literals
+- JavaScript objects are containers for named values called properties or methods.
+let variable = {
+    key1: value1,
+    key2: value2,
+    ...
+    keyN: valueN 
+}
+
+* Methods (Object)
+let variable = {
+    key1: value1,
+    key2: value2,
+    ...
+    keyN: function(param1, param2, ...) {
+        statements;
+    }
+}
+
+* this keyword
+- In an object method, this refers to the "owner" of the method.
+- In the example on the top of this page, this refers to the person object.
+- The person object is the owner of the fullName method.
+- When used alone, the owner is the Global object, so this refers to the Global object.
+
+
+* Math Object
+- Math.random()
+- Math.round()
+- Math.floor()
+- Math.ceil()
+- Math.trunc()
+etc
+
+* Primitive & Reference Types
+- Primitive Types
+    + numbers
+    + strings
+    + Booleans
+    + null 
+    + undefined
+    + symbols
+=> stored on stack
+
+- Reference Types: All types of objects
+    + object literals
+    + arrays
+    + functions 
+    + dates
+    + all other objects
+=> stored on heap
+
+===============================================================================
+Chapter 6: Document Object Model
+* DOM Explained
+- DOM
+    + Created by the browser
+    + 'document' object
+
+* Query Selector
+- querySelector(): The querySelector() method returns the first element that matches a specified CSS selector(s) in the document.
+    + with class="example": document.querySelector(".example");
+
+- querySelectorAll(): The querySelectorAll() method returns all elements in the document that matches a specified CSS selector(s), as a static NodeList object.
+    + with class="example": document.querySelectorAll(".example");
+
+- getElementById(): 
++ The getElementById() method returns the element that has the ID attribute with the specified value.
++ This method is one of the most common methods in the HTML DOM, and is used almost every time you want to manipulate, or get info from, an element on your document.
++ Returns null if no elements with the specified ID exists.
++ An ID should be unique within a page. However, if more than one element with the specified ID exists, the getElementById() method returns the first element in the source code.
+    document.getElementById("demo");
+
+- getElementsByClassName():
++ The getElementsByClassName() method returns a collection of all elements in the document with the specified class name, as a NodeList object.
++ The NodeList object represents a collection of nodes. The nodes can be accessed by index numbers. The index starts at 0.
++ Tip: You can use the length property of the NodeList object to determine the number of elements with a specified class name, then you can loop through all elements and extract the info you want.
+    document.getElementsByClassName("example");
+
+- getElementsByTagName():
++ The getElementsByTagName() method returns a collection of all elements in the document with the specified tag name, as a NodeList object.
++ The NodeList object represents a collection of nodes. The nodes can be accessed by index numbers. The index starts at 0.
++ Tip: The parametervalue "*" returns all elements in the document.
++ Tip: You can use the length property of the NodeList object to determine the number of elements with the specified tag name, then you can loop through all elements and extract the info you want.
+    document.getElementsByTagName("LI");
+
+- NodeList vs HTML Collection
++ The most simplest answer is that both a NodeList and HTMLCollection are collections of DOM nodes. The difference is that while a NodeList can contain any node type, the HTMLCollection is going to only to contain any node Element.
++ So what is the difference between a node element and a node type?
++ Nodes: in the DOM, everything is a node and every node is an object. The name node is used as a generic term, for everything.
++ Element: is one specific type of node. It can be a list item, a div, the body, the window, whatever, but its a specific type.
++ Now we can see what the difference between a nodeList is and what a node element is:
++ In the end, one is general and one is specific lists of nodes. It's important to know simply because you should know what you are returning and for more advanced JavaScript issues such as speed, in the case of static NodeLists vs Live NodeLists.
+
+(https://www.w3schools.com/js/js_htmldom_nodelist.asp)
+
+* Adding & Changing Page Content
+- innerText:
++ The innerText property sets or returns the text content of the specified node, and all its descendants.
++ If you set the innerText property, any child nodes are removed and replaced by a single Text node containing the specified string.
++ Note: This property is similar to the textContent property, however there are some differences:
+    # textContent returns the text content of all elements, while innerText returns the content of all elements, except for <script> and <style> elements.
+    # innerText will not return the text of elements that are hidden with CSS (textContent will). 
++ Tip: To set or return the HTML content of an element, use the innerHTML property.
+
+- innerHTML: The innerHTML property sets or returns the HTML content (inner HTML) of an element.
+
+* Getting & Setting Attributes
+- getAttribute(): The getAttribute() method returns the value of the attribute with the specified name, of an element.
+    document.getElementsByTagName("H1")[0].getAttribute("class");
+
+
+- setAttribute(): 
++ The setAttribute() method adds the specified attribute to an element, and gives it the specified value.
++ If the specified attribute already exists, only the value is set/changed.
++ Note: Although it is possible to add the style attribute with a value to an element with this method, it is recommended that you use properties of the Style object instead for inline styling, because this will not overwrite other CSS properties that may be specified in the style attribute:
+    document.getElementsByTagName("H1")[0].setAttribute("class", "democlass");
+
+* Changing CSS Styles
+- Style
++ The style property returns a CSSStyleDeclaration object, which represents an element's style attribute.
++ The style property is used to get or set a specific style of an element using different CSS properties
+    document.getElementById("myH1").style.color = "red";
+
+* Adding and Removing class
+- classList:
++ The classList property returns the class name(s) of an element, as a DOMTokenList object.
++ This property is useful to add, remove and toggle CSS classes on an element.
++ The classList property is read-only, however, you can modify it by using the add() and remove() methods.
+
+- Method: 
++ add(class1, class2, ...)	
+    # Adds one or more class names to an element.
+    # If the specified class already exist, the class will not be added
+
++ contains(class)	
+    # Returns a Boolean value, indicating whether an element has the specified class name.
+
++ item(index)	
+    # Returns the class name with a specified index number from an element. Index starts at 0.
+    # Returns null if the index is out of range
+
++ remove(class1, class2, ...)
+    # Removes one or more class names from an element.
+
++ toggle(class, true|false)
+	# Toggles between a class name for an element.
+    #The first parameter removes the specified class from an element, and returns false. If the class does not exist, it is added to the element, and the return value is true.
+    # The optional second parameter is a Boolean value that forces the class to be added or removed, regardless of whether or not it already existed. For example:
+    # Remove a class: element.classList.toggle("classToRemove", false); 
+    # Add a class: element.classList.toggle("classToAdd", true);
+
+* Parents, Siblings & Children
+- children property: 
++ The children property returns a collection of an element's child elements, as an HTMLCollection object.
++ The elements in the collection are sorted as they appear in the source code and can be accessed by index numbers. The index starts at 0.
++ Tip: 
+    # You can use the length property of the HTMLCollection object to determine the number of child elements, then you can loop through all children and extract the info you want.
+    # The difference between this property and childNodes, is that childNodes contain all nodes, including text nodes and comment nodes, while children only contain element nodes.
+
+Ex: var c = document.body.children;
+
+- nextSibling property:
++ The nextSibling property returns the node immediately following the specified node, in the same tree level.
++ The returned node is returned as a Node object.
++ The difference between this property and nextElementSibling, is that nextSibling returns the next sibling node as an element node, a text node or a comment node, while nextElementSibling returns the next sibling node as an element node (ignores text and comment nodes).
++ This property is read-only.
++ Tip: 
+    # Use the previousSibling property to return the previous node of the specified node, in the same tree level.
+    # Use the childNodes property to return any child node of a specified node.
+
+Ex: var x = document.getElementById("item1").nextSibling.innerHTML;
+
+
+- parentElement property:
++ The parentElement property returns the parent element of the specified element.
++ The difference between parentElement and parentNode, is that parentElement returns null if the parent node is not an element node
++ In most cases, it does not matter which property you use, however, parentNode is probably the most popular.
++ This property is read-only.
+
+Ex: var x = document.getElementById("myLI").parentElement.nodeName;
+
+* Event Basic
+- addEventListener()
++ The addEventListener() method attaches an event handler to the specified element.
++ Tip: Use the removeEventListener() method to remove an event handler that has been attached with the addEventListener() method.
++ Tip: Use the document.addEventListener() method to attach an event handler to the document.
+
+- target Event Property:
++ Get the element that triggered a specific event:
+    # alert(event.target);
+
+* Creating & Removing Element
+- remove(): The ChildNode.remove() method removes the object from the tree it belongs to.
+    # node.remove();
+
+- createElement(): The createElement() method creates an Element Node with the specified name.
++ Tip: After the element is created, use the element.appendChild() or element.insertBefore() method to insert it to the document.
+    # document.createElement(nodename)
+
+- append() : The ParentNode.append() method inserts a set of Node objects or DOMString objects after the last child of the ParentNode. DOMString objects are inserted as equivalent Text nodes.
+
+- prepend(): The ParentNode.prepend() method inserts a set of Node objects or DOMString objects before the first child of the ParentNode. DOMString objects are inserted as equivalent Text nodes.
+
+* Event Bubbling (and delegation)
+- Event Bubbling: When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.
+
+- Stop Bubbling: event.stopPropagation()
+
+- Delegation: If we have a lot of elements handled in a similar way, then instead of assigning a handler to each of them – we put a single handler on their common ancestor.
+
+* More DOM Events
+- copy, wheel, mousemove
+
+===============================================================================
+Chapter 7: Form & Form Events
+
+* Form Events:
+- Capture data or information from a user (username & password)
