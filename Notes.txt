@@ -709,5 +709,38 @@ Chapter 14: Local Storage
     + When receiving data from a web server, the data is always a string.
     + Parse the data with JSON.parse(), and the data becomes a JavaScript object.
 
+===============================================================================
+Chapter 15: Object Oriented JavaScript
+ 
+* Object Oriented JavaScript (OOP)
+- In JavaScript, almost "everything" is an object.
+- There are different ways to create new objects:
+    + Define and create a single object, using an object literal.
+    + Define and create a single object, with the keyword new.
+    + Define an object constructor, and then create objects of the constructed type.
+
+* Object Literal
+- This is the easiest way to create a JavaScript Object.
+- Using an object literal, you both define and create an object in one statement.
+- An object literal is a list of name:value pairs (like age:50) inside curly braces {}.
+
+* Class
+- A Class is like a blueprint for an object (it describes how one should be made)
+- Use the keyword class to create a class, and always add a constructor method.
+- The constructor method is called each time the class object is initialized.
+- Create an object based on the class:
+    + Ex: mycar = new Car();
+- the 'new' keyword:
+    + 1 - it creates a new empty object {}
+    + 2 - it binds the value of 'this' to the new empty object
+    + 3 - it calls the constructor function to 'build' the object
+
+* Method
+- The constructor method is special, it is where you initialize properties, it is called automatically when a class is initiated, and it has to have the exact name "constructor", in fact, if you do not have a constructor method, JavaScript will add an invisible and empty constructor method.
+- You are also free to make your own methods
+- As you can see in the example above, you call the method by referring to the object's method name followed by parentheses (any parameters would go inside the parentheses).
+
+* Subclasses
+- To create a class inheritance, use the extends keyword.
 
 
