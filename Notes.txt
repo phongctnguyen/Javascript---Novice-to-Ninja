@@ -743,4 +743,19 @@ Chapter 15: Object Oriented JavaScript
 * Subclasses
 - To create a class inheritance, use the extends keyword.
 
+* super()
+- The super keyword is used to access and call functions on an object's parent.
 
+* Prototypes
+- Every object in JavaScript has a prototype
+- Prototypes contain all the methods for that object type
+
+===============================================================================
+Chapter 16: Database (Firebase)
+* NoSQL Database: Storing Data
+- Websites work with data: blog posts, todos, comments, user info, scores ...
+- We can store this data in a database (Firebase - Google)
+
+- Compare SQL & NoSQL
++ SQL: Tables - Rows - Columns
++ NoSQL: Collections - Documents - Properties
